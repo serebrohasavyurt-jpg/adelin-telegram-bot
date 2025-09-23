@@ -1,8 +1,10 @@
-import os, asyncio
+import os
+import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
-TOKEN = "8200244117:AAF7l93IVbJ_SOq7GWrdmwPnsKf_JF57zQY"
+# токен берём из переменной окружения
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 if not TOKEN:
     raise RuntimeError("ENV var TELEGRAM_TOKEN is missing")
 
@@ -23,8 +25,9 @@ async def idea_handler(message: types.Message):
     await message.answer(f"Вот твой вирусный промт:\n\n{prompt}")
 
 async def main():
-    print("🤖 Бот запускается на Render…")
+    print("🤖 Бот запущен... Напиши /start в Telegram")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
     asyncio.run(main())
+
