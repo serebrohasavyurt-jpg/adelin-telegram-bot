@@ -2,7 +2,7 @@ import os, asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
-TOKEN = os.getenv("8200244117:AAF9j1seShJtyT6OVWGfdYdCH5t-oD1nQ_A")
+TOKEN = "8200244117:AAF7l93IVbJ_SOq7GWrdmwPnsKf_JF57zQY"
 if not TOKEN:
     raise RuntimeError("ENV var TELEGRAM_TOKEN is missing")
 
